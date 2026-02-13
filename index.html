@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Quieres ser mi San Valentín, Luna?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 28px 22px;
+      border-radius: 22px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 1s ease;
+    }
+    h1 {
+      color: #e63946;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #333;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+    .quote {
+      background: #fff0f3;
+      border-radius: 14px;
+      padding: 14px;
+      margin: 15px 0;
+      font-style: italic;
+      color: #5a2a2a;
+    }
+    .buttons {
+      margin-top: 18px;
+    }
+    button {
+      padding: 12px 20px;
+      margin: 8px;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+    .no {
+      background: #e0e0e0;
+      color: #333;
+      position: relative;
+    }
+    .footer {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #777;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Para ti, Luna 🌙</h1>
+    <p>Mi gordita, hay cosas que quiero decirte desde el corazón:</p>
+
+    <div class="quote">
+      “Te prometo mi amor, que te amaré con la seguridad de saber lo que siento, de ya no ser un niño descubriendo lo que significa amar.  
+      Que te amaré como siempre lo he hecho, en la salud, en la enfermedad, en la pobreza y en la riqueza; te daré todo lo que tengo, porque todo lo que tengo nació de tu amor.”
+    </div>
+
+    <p>Por eso hoy, con el corazón en la mano, quiero preguntarte algo muy simple pero muy importante para mí:</p>
+    <h2>¿Quieres ser mi San Valentín? 💖</h2>
+
+    <div class="buttons">
+      <button class="yes" onclick="aceptar()">Sí, quiero 🥰</button>
+      <button class="no" id="noBtn" onmouseover="moverNo()">No 😢</button>
+    </div>
+
+    <div class="footer">Hecho con amor solo para ti.</div>
+  </div>
+
+  <script>
+    function aceptar() {
+      document.getElementById("card").innerHTML = `
+        <h1>Sabía que dirías que sí 😍</h1>
+        <p>Gracias por hacerme sentir tan feliz, niña.  
+        Prometo cuidarte, apoyarte y elegirte cada día.</p>
+        <p>Este 14 es nuestro 💘</p>
+      `;
+    }
+
+    function moverNo() {
+      const btn = document.getElementById("noBtn");
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = "translate(" + x + "px, " + y + "px)";
+    }
+  </script>
+</body>
+</html>
